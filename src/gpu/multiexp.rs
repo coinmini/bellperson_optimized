@@ -454,11 +454,16 @@ where
                                 info!("ZQ: bases len: {:?}, exps len: {:?}", bases.len(), exps.len());
 
                                 let mut acc = <G as CurveAffine>::Projective::zero();
-                                let jack_chunk_3080 = 33554466;
-                                let mut jack_windows_size = 11;
+                                // let jack_chunk_3080 = 33554466;
+                                // let mut jack_windows_size = 11;
+
+                                let jack_chunk_3090 = 87108864;
+                                let mut jack_windows_size = 12;
+
                                 let size_result = std::mem::size_of::<<G as CurveAffine>::Projective>();
                                 if size_result > 144 {
-                                    jack_windows_size = 8;
+                                    // jack_windows_size = 8;
+                                    jack_windows_size = 10;
                                 }
                                 for (bases, exps) in bases.chunks(jack_chunk_3080).zip(exps.chunks(jack_chunk_3080)) {
                                     let result = kern.multiexp(bases, exps, bases.len(), jack_windows_size)?;
