@@ -465,7 +465,7 @@ where
                                     // jack_windows_size = 8;
                                     jack_windows_size = 10;
                                 }
-                                for (bases, exps) in bases.chunks(jack_chunk_3080).zip(exps.chunks(jack_chunk_3080)) {
+                                for (bases, exps) in bases.chunks(jack_chunk_3090).zip(exps.chunks(jack_chunk_3090)) {
                                     let result = kern.multiexp(bases, exps, bases.len(), jack_windows_size)?;
                                     acc.add_assign(&result);
                                 }
